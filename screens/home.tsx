@@ -33,10 +33,7 @@ const HomeScreen = () => {
             </View>
         );
     return (
-        <View style={styles.container}>
-            
-            
-                
+        <View style={styles.container}>    
             <FlatList
                 ListHeaderComponent={()=>(
                     <View>
@@ -118,7 +115,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        paddingTop:30,
+        paddingTop:50,
         paddingHorizontal:15,
     },
     header:{

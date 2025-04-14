@@ -1,22 +1,56 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { NavigationContainer } from '@react-navigation/native';
-import { View, Text } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from '../screens/home';
 import WalletScreen from '../screens/wallet';
 import OrdersScreen from '../screens/orders';
 import CardsScreen from '../screens/cards';
+import { Image } from 'react-native';
 
 const Tab = createMaterialTopTabNavigator();
 
 export default function TabApp() {
     return (
-        <Tab.Navigator tabBarPosition='bottom' screenOptions={{tabBarStyle:{height:50}, tabBarLabelStyle:{fontSize:15, color:'black'}, tabBarShowLabel: true }}>
-            <Tab.Screen name="home" options={{title:'HOME'}} component={HomeScreen} />
-            <Tab.Screen name="wallet" options={{title:'WALLET'}} component={WalletScreen} />
-            <Tab.Screen name="orders" options={{title:'ORDERS'}} component={OrdersScreen} />
-            <Tab.Screen name="cards" options={{title:'CARDS'}}  component={CardsScreen} />
+        <Tab.Navigator  tabBarPosition='bottom' >
+            <Tab.Screen 
+                name="home" 
+                component={HomeScreen} 
+                options={{
+                    title: 'HOME',
+                    tabBarIcon: () => (
+                        <Image source={require('../assets/home.png')} />
+                    )
+                }} 
+            />
+            <Tab.Screen 
+                name="wallet" 
+                component={WalletScreen} 
+                options={{
+                    title: 'WALLET',
+                    tabBarIcon: () => (
+                        <Image source={require('../assets/empty-wallet.png')} />
+                    )
+                }} 
+            />
+            <Tab.Screen 
+                name="orders" 
+                component={OrdersScreen} 
+                options={{
+                    title: 'ORDERS',
+                    tabBarIcon: () => (
+                        <Image source={require('../assets/Group.png')} />
+                    )
+                }} 
+            />
+            <Tab.Screen 
+                name="cards" 
+                component={CardsScreen} 
+                options={{
+                    title: 'CARDS',
+                    tabBarIcon: () => (
+                        <Image source={require('../assets/Group.png')} />
+                    )
+                }} 
+            />
         </Tab.Navigator>
     );
 }

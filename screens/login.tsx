@@ -22,7 +22,7 @@ const Login = ({navigation}: {navigation: NavigationProp<any>}) => {
             <TouchableOpacity style={styles.forgotPasswordContainer}>
                 <Text style={styles.forgotPassword}>Forgot Password?</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('tab')} style={styles.signUpContainer}>
+            <TouchableOpacity onPress={()=>navigation.navigate('thetab')} style={styles.signUpContainer}>
                 <Text style={styles.signUp}>Sign up</Text>
             </TouchableOpacity>
             <Text style={styles.alreadyHaveAccount}>Don’t have an account?  <Text style={{color:'#2563EB'}}>Sign up</Text></Text>

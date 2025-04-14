@@ -19,7 +19,6 @@ import TabApp from './components/tab';
 
 export default function App() {
   const Stack= createStackNavigator();
-  const Tab = createMaterialTopTabNavigator()
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='splash_screen'>
@@ -35,7 +34,7 @@ export default function App() {
         <Stack.Screen name="reset_password" options={{headerShown:true, headerTitleAlign:'center', title: 'Reset Password'}} component={ResetPassword} />
         <Stack.Screen name='reset_password_otp' options={{headerShown:true, headerTitleAlign:'center', title: 'Reset Password'}} component={ResetPasswordOtp} />
         <Stack.Screen name='new_password' options={{headerShown:true, headerTitleAlign:'center', title: 'Reset Password'}} component={NewPassword} />
-        <Stack.Screen name='tab' options={{headerShown:false, headerTitleAlign:'center', title: 'Home'}} component={TabApp} />
+        <Stack.Screen name='thetab' options={{headerShown:false}} component={TabApp} />
       </Stack.Navigator>
     </NavigationContainer>
   );

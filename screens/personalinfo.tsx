@@ -49,7 +49,7 @@ const PersonalInformation: React.FC<PersonalInformationProps> = ({ navigation })
             <View style={styles.inputView}>
                 <TextInput style={styles.textInput} placeholder='Postal' />
             </View>
-            <TouchableOpacity onPress={()=>navigation.navigate('tab')} style={styles.signUpContainer}>
+            <TouchableOpacity onPress={()=>navigation.navigate('thetab')} style={styles.signUpContainer}>
                 <Text style={styles.signUp}>Continue</Text>
             </TouchableOpacity>
         </View>
