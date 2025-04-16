@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, Pressable, TouchableOpacity, FlatList } from 'react-native';
-import { Feather, FontAwesome6, MaterialIcons, Octicons } from '@expo/vector-icons';
+import { Feather, FontAwesome6, Ionicons, MaterialIcons, Octicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { data } from '../data/selloffers';
 
@@ -41,7 +41,7 @@ const HomeScreen = () => {
                         <Image  style={styles.avatar} source={require('../assets/avatar.png')} />
                         <Text style={styles.headerText}>Welcome back, Walter</Text>
                         <View style={styles.notificationIconContainer}>
-                            <MaterialIcons style={styles.notificationIcon} name="notifications" size={24} color="black" />
+                            <Ionicons style={styles.notificationIcon} name="notifications-outline" size={24} color="black" />
                             <Octicons style={styles.notificationBadge} name="dot-fill" size={15} color="red" />
                         </View>
                     </View>
@@ -85,7 +85,7 @@ const HomeScreen = () => {
                     <View style={styles.offerTextandSeeAllContainer}>
                         <Text style={{fontSize:17, fontWeight:'500'}}>Sell Offers</Text>
                         <TouchableOpacity>
-                            <Text style={{color:'#004BEC', fontSize:14, fontWeight:'400'}}>See all</Text>
+                            <Text style={{color:'#004BEC', fontSize:14, fontWeight:'400'}}>see all</Text>
                         </TouchableOpacity>
                     </View>
                     </View>
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
         paddingVertical:8,
         backgroundColor: '#E99B36',
         color:'white',
-        width:160,
+        width:'50%',
         borderRadius:5,
         marginBottom:5
     },

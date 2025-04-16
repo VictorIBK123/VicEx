@@ -47,7 +47,7 @@ const ExchangeRates: React.FC<ExchangeRatesProps> = ({ navigation }) => {
             />
             <View style={styles.footerContainer}>
                 <TouchableOpacity onPress={()=>navigation.navigate('create_account')} style={[styles.bestRateContainer,{backgroundColor: '#22A37C'}]}>
-                    <Text style={[styles.bestRate,{color:'white'}]}>Get Started</Text>
+                    <Text style={[styles.bestRate,{color:'white', fontWeight:'bold'}]}>Get Started</Text>
                 </TouchableOpacity> 
                 <View style={styles.alreadyHaveAccountContainer}>
                     <Text style={styles.alreadyHaveAccount}>Already have an account? <Text style={{color:'#2563EB'}}>Login</Text></Text>
@@ -125,7 +125,6 @@ const styles = StyleSheet.create({
         flex:6/10,
     },
     bestRateContainer:{
-        borderWidth:1,
         width:'90%',
         paddingVertical:15,
         borderColor:'#0C263A',
@@ -143,7 +142,7 @@ const styles = StyleSheet.create({
     },
     alreadyHaveAccount:{
         fontSize:16,
-        fontWeight:'500',
+        fontWeight:'bold',
         letterSpacing:0
     },
     footerContainer:{

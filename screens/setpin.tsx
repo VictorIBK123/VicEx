@@ -1,19 +1,31 @@
 import React from 'react';
-import { View, StyleSheet,Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
+import { View, StyleSheet,Text, TouchableOpacity, ScrollView,  Image, Dimensions } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TextInput } from 'react-native-gesture-handler';
+import { NavigationProp } from '@react-navigation/native';
 
-const SetPin:React.FC = () => {
+const SetPin:React.FC<{ navigation: NavigationProp<any> }> = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Text style={styles.weHaveSent}>Set up your 4 digit pin to make your account more secure. You’ll be asked to enter this pin when making transcations</Text>
             <View style={styles.pinInputsContainer}>
-                <MaterialCommunityIcons name="radiobox-marked" size={46} color="#22A37C" />
-                <MaterialCommunityIcons name="radiobox-marked" size={46} color="#22A37C" />
-                <MaterialCommunityIcons name="radiobox-marked" size={46} color="#22A37C" />
-                <MaterialCommunityIcons name="radiobox-blank" size={46} color="#22A37C" />
+                <View style={{marginRight:8}}>
+                    <Image source={require('../assets/ellipse.png')}  />
+                    <Image style={{position:'absolute', alignSelf:'center', marginTop:11,marginBottom:11}} source={require('../assets/ellipse9.png')}  />
+                </View>                
+                <View style={{marginRight:8}}>
+                    <Image source={require('../assets/ellipse.png')}  />
+                    <Image style={{position:'absolute', alignSelf:'center', marginTop:11,marginBottom:11}} source={require('../assets/ellipse9.png')}  />
+                </View>                
+                <View style={{marginRight:8}}>
+                    <Image source={require('../assets/ellipse.png')}  />
+                    <Image style={{position:'absolute', alignSelf:'center', marginTop:11,marginBottom:11}} source={require('../assets/ellipse9.png')}  />
+                </View>                
+                <View style={{marginRight:8}}>
+                    <Image source={require('../assets/ellipse.png')}  />
+                </View>
             </View>
-            <TouchableOpacity style={styles.submitButtonContainer}>
+            <TouchableOpacity onPress={()=>navigation.navigate('thetab')} style={styles.submitButtonContainer}>
                 <Text style={styles.submit}>Proceed</Text>
             </TouchableOpacity>
             <View style={styles.buttonsContainer}>
@@ -58,7 +70,7 @@ const SetPin:React.FC = () => {
                         <Text style={styles.enterButton}>0</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.buttonContainer}>
-                        <Text style={styles.enterButton}>CE</Text>
+                        <Image source={require('../assets/fill1.png')} />
                     </TouchableOpacity>
                 </View>
             </View>
@@ -86,7 +98,7 @@ const styles = StyleSheet.create({
     pinInputsContainer:{
         flexDirection:'row',
         marginBottom:10,
-        flex:1/10,
+        flex:1.5/10,
         justifyContent:'space-between',
     },
     rowContainer:{
@@ -101,7 +113,7 @@ const styles = StyleSheet.create({
         paddingHorizontal:25,
         color:'#6B777F',
         marginBottom:20,
-        flex:3.5/10,
+        flex:3/10,
         marginTop:30,
         
     },

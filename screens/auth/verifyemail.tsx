@@ -1,8 +1,12 @@
 import React from 'react';
-import { View, StyleSheet,Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
+import { View, StyleSheet,Text, TouchableOpacity, ScrollView, Dimensions, Image } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
+import { NavigationProp } from '@react-navigation/native';
+interface VerifyEmailScreenProps{
+    navigation: NavigationProp<any>;
+}
 
-const VerifyEmailScreen:React.FC = () => {
+const VerifyEmailScreen: React.FC<VerifyEmailScreenProps> = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.pleaseVerifyPhone}>Please verify your email address</Text>
@@ -13,11 +17,11 @@ const VerifyEmailScreen:React.FC = () => {
                 <TextInput editable={false} style={styles.textInput} maxLength={1} value='8' />
                 <TextInput editable={false} style={styles.textInput} maxLength={1} value='2' />
                 <TextInput editable={false} style={styles.textInput} maxLength={1} value='1' />
-                <TextInput editable={false} style={styles.textInput} maxLength={1} value='0' />
-                <TextInput editable={false} style={styles.textInput} maxLength={1} value='6' />
+                <TextInput editable={false} style={styles.textInput} maxLength={1} value='' />
+                <TextInput editable={false} style={styles.textInput} maxLength={1} value='' />
             </View>
             <Text style={styles.didNotGetTheCode}>Didn’t get the code? <Text style={{color:'#2563EB'}}>Resend code (59s)</Text></Text>
-            <TouchableOpacity style={styles.submitButtonContainer}>
+            <TouchableOpacity onPress={()=>navigation.navigate("enter_phone")} style={styles.submitButtonContainer}>
                 <Text style={styles.submit}>Submit</Text>
             </TouchableOpacity>
             <View style={styles.buttonsContainer}>
@@ -62,7 +66,7 @@ const VerifyEmailScreen:React.FC = () => {
                         <Text style={styles.enterButton}>0</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.buttonContainer}>
-                        <Text style={styles.enterButton}>CE</Text>
+                        <Image source={require('../../assets/fill1.png')} />
                     </TouchableOpacity>
                 </View>
             </View>

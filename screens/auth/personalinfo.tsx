@@ -10,11 +10,11 @@ const PersonalInformation: React.FC<PersonalInformationProps> = ({ navigation })
     return (
         <ScrollView>
         <View style={styles.container}>
-            <Text style={styles.label}>First name</Text>
+            <Text style={styles.label}>First name  *</Text>
             <View style={styles.inputView}>
                 <TextInput style={styles.textInput} placeholder='First name' />
             </View>
-            <Text style={styles.label}>Last name</Text>
+            <Text style={styles.label}>Last name  *</Text>
             <View style={styles.inputView}>
                 <TextInput style={styles.textInput} placeholder='Last name' />
             </View>
@@ -26,12 +26,12 @@ const PersonalInformation: React.FC<PersonalInformationProps> = ({ navigation })
             <Text style={styles.label}>Country of Residence</Text>
             <View style={styles.inputView}>
                 <TextInput style={styles.textInput} placeholder='Select' />
-                <AntDesign style={styles.eyeIcon} name="caretdown" size={15} color="black" />
+                <AntDesign style={styles.eyeIcon} name="caretdown" size={15} color="#6B777F" />
             </View>
             <Text style={styles.label}>State/Territory</Text>
             <View style={styles.inputView}>
                 <TextInput style={styles.textInput} placeholder='State/Territory' />
-                <AntDesign style={styles.eyeIcon} name="caretdown" size={15} color="black" />
+                <AntDesign style={styles.eyeIcon} name="caretdown" size={15} color="#6B777F" />
             </View>
             <Text style={styles.label}>Address line 1</Text>
             <View style={styles.inputView}>
@@ -49,7 +49,7 @@ const PersonalInformation: React.FC<PersonalInformationProps> = ({ navigation })
             <View style={styles.inputView}>
                 <TextInput style={styles.textInput} placeholder='Postal' />
             </View>
-            <TouchableOpacity onPress={()=>navigation.navigate('thetab')} style={styles.signUpContainer}>
+            <TouchableOpacity onPress={()=>navigation.navigate("verify_email")} style={styles.signUpContainer}>
                 <Text style={styles.signUp}>Continue</Text>
             </TouchableOpacity>
         </View>
@@ -66,12 +66,13 @@ const styles = StyleSheet.create({
     label:{
         alignItems:'center',
         fontSize:14,
-        marginBottom:10
+        marginBottom:10,
+        // fontWeight:'100'
     },
     inputView:{
         flexDirection:'row',
         backgroundColor:'white',
-        elevation:10,
+        elevation:3,
         paddingVertical:10,
         paddingHorizontal:20,
         borderRadius:10,
@@ -101,6 +102,7 @@ const styles = StyleSheet.create({
         textAlign:'center',
         color:'white',
         fontSize:16,
+        fontWeight:'bold'
     },
     alreadyHaveAccount:{
         fontSize:16,

@@ -82,13 +82,14 @@ const styles = StyleSheet.create({
         textAlign:'center',
         color:'white',
         fontSize:16,
+        fontWeight:'bold'
     },
     alreadyHaveAccount:{
         fontSize:16,
-        fontWeight:'500',
+        fontWeight:'bold',
         letterSpacing:0,
         textAlign:'center',
-        marginTop:10
+        marginTop:10,
     }
 });
 

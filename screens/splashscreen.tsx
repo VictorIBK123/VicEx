@@ -19,11 +19,11 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ navigation }) => {
             <TouchableOpacity  onPress={()=>navigation.navigate('exchange_rates')} style={styles.bestRateContainer}>
                 <Text style={styles.bestRate} >View Best Rate Now</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('create_account')} style={[styles.bestRateContainer,{backgroundColor: '#22A37C'}]}>
+            <TouchableOpacity onPress={()=>navigation.navigate('create_account')} style={[styles.bestRateContainer,{backgroundColor: '#22A37C', borderWidth:0}]}>
                 <Text style={[styles.bestRate,{color:'white'}]}>Get Started</Text>
             </TouchableOpacity> 
             <View style={styles.alreadyHaveAccountContainer}>
-                <Text style={styles.alreadyHaveAccount}>Already have an account? <TouchableOpacity onPress={()=>navigation.navigate('login')} style={{justifyContent:'center', alignItems:'center'}}><Text style={[styles.alreadyHaveAccount, {color:'#2563EB'}]}>Login</Text></TouchableOpacity></Text>
+                <Text style={styles.alreadyHaveAccount}>Already have an account? <Text style={[styles.alreadyHaveAccount, {color:'#2563EB',}]}>Login</Text></Text>
             </View>
         </View>
     );
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     },
     bestRate:{
         textAlign:'center',
-        fontWeight:'600',
+        fontWeight:'bold',
         fontSize:16,
         color:'#0C263A'
     },
@@ -68,8 +68,9 @@ const styles = StyleSheet.create({
     },
     alreadyHaveAccount:{
         fontSize:16,
-        fontWeight:'500',
+        fontWeight:'bold',
         letterSpacing:0,
+        
     }
 });
 

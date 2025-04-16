@@ -4,7 +4,13 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const {height, width} = Dimensions.get('window');
-const EnterPhoneScreen:React.FC = () => {
+import { NavigationProp } from '@react-navigation/native';
+
+interface EnterPhoneScreenProps {
+    navigation: NavigationProp<any>;
+}
+
+const EnterPhoneScreen: React.FC<EnterPhoneScreenProps> = ({navigation}) => {
     
     return (
         <View style={styles.container}>
@@ -12,13 +18,13 @@ const EnterPhoneScreen:React.FC = () => {
             <Text style={styles.verificationCode}>We'll send you a verification code</Text>
             <View style={styles.phoneNumberContainer}>
                 <View style={styles.countryNumber}>
-                    <Image source={require('../assets/flag.png')} style={{height:19, width:26.13}} />
-                    <Text style={styles.code}>+234</Text>
+                    <Image source={require('../../assets/flag.png')} style={{height:19, width:26.13}} />
+                    <Text style={styles.code}>+1</Text>
                     <AntDesign name="down" size={16} color="#6B777F" />
                 </View>
                 <TextInput maxLength={20} value='(506) 210-0661' style={styles.numberInput}  />
             </View>
-            <TouchableOpacity style={styles.continueContainer}>
+            <TouchableOpacity onPress={()=>navigation.navigate("verify_phone")} style={styles.continueContainer}>
                 <Text style={styles.continue}>Continue</Text>
             </TouchableOpacity>
         </View>
@@ -40,7 +46,7 @@ const styles = StyleSheet.create({
     enterPhone: {
         fontSize: 28,
         color: '#0C263A',
-        fontWeight: '500',
+        fontWeight: 'bold',
         marginBottom:15
     },
     phoneNumberContainer:{
@@ -80,7 +86,8 @@ const styles = StyleSheet.create({
     continue:{
         color:'white',
         textAlign:'center',
-        fontSize:16
+        fontSize:16,
+        fontWeight:'bold'
     },
     code:{
         fontSize:16,

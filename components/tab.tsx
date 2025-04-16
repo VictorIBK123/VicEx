@@ -47,7 +47,7 @@ export default function TabApp() {
                 options={{
                     title: 'CARDS',
                     tabBarIcon: () => (
-                        <Image source={require('../assets/Group.png')} />
+                        <Image source={require('../assets/card-tick.png')} />
                     )
                 }} 
             />

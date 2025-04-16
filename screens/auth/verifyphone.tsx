@@ -1,8 +1,12 @@
 import React from 'react';
 import { View, StyleSheet,Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
+import { NavigationProp } from '@react-navigation/native';
+type VerifyPhoneScreenProps = {
+    navigation: NavigationProp<any>
+}
 
-const VerifyPhoneScreen:React.FC = () => {
+const VerifyPhoneScreen: React.FC<VerifyPhoneScreenProps> = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.pleaseVerifyPhone}>Please verify your phone number</Text>
@@ -17,7 +21,7 @@ const VerifyPhoneScreen:React.FC = () => {
                 <TextInput editable={false} style={styles.textInput} maxLength={1} value='6' />
             </View>
             <Text style={styles.didNotGetTheCode}>Didn’t get the code? <Text style={{color:'#2563EB'}}>Resend code (59s)</Text></Text>
-            <TouchableOpacity style={styles.submitButtonContainer}>
+            <TouchableOpacity onPress={()=>navigation.navigate("set_pin" )} style={styles.submitButtonContainer}>
                 <Text style={styles.submit}>Submit</Text>
             </TouchableOpacity>
             <View style={styles.buttonsContainer}>
